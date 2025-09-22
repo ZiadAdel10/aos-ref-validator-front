@@ -40,11 +40,10 @@ export function Result({ result, showDebug = false }: ResultProps) {
         {/* Eligibility Badge */}
         {result.eligibility && (
           <div className="flex justify-center">
-            <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-              result.eligibility === "Eligible" 
-                ? "bg-green-100 text-green-800 border border-green-200" 
-                : "bg-yellow-100 text-yellow-800 border border-yellow-200"
-            }`}>
+            <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${result.eligibility === "Eligible"
+              ? "bg-green-100 text-green-800 border border-green-200"
+              : "bg-yellow-100 text-yellow-800 border border-yellow-200"
+              }`}>
               {result.eligibility}
             </span>
           </div>
@@ -95,7 +94,7 @@ export function Result({ result, showDebug = false }: ResultProps) {
           </div>
         )}
 
-        {showDebug && result.raw && (
+        {showDebug && !!result.raw && (
           <div className="bg-gray-50 border border-gray-200 rounded-md p-3">
             <h4 className="text-xs font-medium text-gray-700 mb-2">Raw Webhook Response:</h4>
             <pre className="text-xs text-gray-600 overflow-x-auto whitespace-pre-wrap">
@@ -121,7 +120,7 @@ export function Result({ result, showDebug = false }: ResultProps) {
             </div>
           </div>
         </div>
-        {showDebug && result.raw && (
+        {showDebug && !!result.raw && (
           <div className="bg-gray-50 border border-gray-200 rounded-md p-3">
             <h4 className="text-xs font-medium text-gray-700 mb-2">Raw Webhook Response:</h4>
             <pre className="text-xs text-gray-600 overflow-x-auto whitespace-pre-wrap">
@@ -147,7 +146,7 @@ export function Result({ result, showDebug = false }: ResultProps) {
             </div>
           </div>
         </div>
-        {showDebug && result.raw && (
+        {showDebug && !!result.raw && (
           <div className="bg-gray-50 border border-gray-200 rounded-md p-3">
             <h4 className="text-xs font-medium text-gray-700 mb-2">Raw Webhook Response:</h4>
             <pre className="text-xs text-gray-600 overflow-x-auto whitespace-pre-wrap">
@@ -173,7 +172,7 @@ export function Result({ result, showDebug = false }: ResultProps) {
           </div>
         </div>
       </div>
-      {showDebug && result.raw && (
+      {showDebug && !!result.raw && (
         <div className="bg-gray-50 border border-gray-200 rounded-md p-3">
           <h4 className="text-xs font-medium text-gray-700 mb-2">Raw Webhook Response:</h4>
           <pre className="text-xs text-gray-600 overflow-x-auto whitespace-pre-wrap">
